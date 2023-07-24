@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[HomeController::class,'welcome']);
-Route::post('/reminder',[ReminderController::class,'reminder']);
-Route::get('/edit/{id}',[ReminderController::class,'edit']);
-Route::post('/reminder-edit/{id}',[ReminderController::class,'update']);
-Route::get('/reminder-delete/{id}',[ReminderController::class,'destroy']);
+Route::get('/', [HomeController::class, 'welcome']);
+Route::post('/reminder', [ReminderController::class, 'reminder']);
+Route::get('/reminder-edit/{id}', [ReminderController::class, 'update']);
+Route::get('/reminder-delete/{id}', [ReminderController::class, 'destroy']);
+Route::get('/reminder-filter',[ReminderController::class,'showReminders'])->name('reminders.filter');

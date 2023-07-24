@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container">
-      <form action="/reminder-edit/{{$reminder->id}}" id="task-form" method="post">
+      <form action="" id="task-form" method="post">
         @csrf
         <h1>Edit Notes</h1>
         <div class="items-wrap">

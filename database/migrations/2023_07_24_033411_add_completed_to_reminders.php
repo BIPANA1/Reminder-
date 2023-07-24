@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reminders', function (Blueprint $table) {
-            $table->id();
-            $table->string('date');
-            $table->string('time');
-            $table->string('task');
-            $table->string('status');
-            $table->timestamps();
-        });
+        
+            Schema::table('reminders', function (Blueprint $table) {
+                $table->boolean('completed')->default(false);
+            });
+      
     }
 
     /**
@@ -26,6 +23,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reminders');
+        Schema::table('reminders', function (Blueprint $table) {
+            $table->dropColumn('completed');
+    
+        });
     }
 };

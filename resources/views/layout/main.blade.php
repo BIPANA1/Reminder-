@@ -13,6 +13,18 @@
 
   </head>
   <body>
+
+
+  <style>
+
+
+.items{
+  margin-left: 90%;
+  display: flex;
+  /* margin-bottom: 10%; */
+}
+
+    </style>
   <div class="container" id="container-nav">
         <div class="nav">
             <ul>
@@ -20,6 +32,15 @@
                 <span class="logo"><a href="/" >TODO-List </a></span>
                 
             </ul>
+            <!-- <div class="d-flex align-items-center"> -->
+              <div class="items">
+                    <img src="{{auth()->user()->image}}" alt="Profile Picture" class="rounded-circle" style="width: 40px; height: 40px;">
+                        <span class="text-light d-block pl-2"></span>
+                        <a href="/logout" class="btn btn-sm btn-danger ml-3">Logout</a>
+                </div>
+                  <div class="logout">
+                  </div>
+                  </div>
         </div>
   </div>
 

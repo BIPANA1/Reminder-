@@ -4,9 +4,20 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Reminder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session as FacadesSession;
 
 class ReminderController extends Controller
 {  
+
+
+    public function home(Request $request){
+         $query = Reminder::query();
+         $date = $request->date_filter;
+         $reminders = $query->get();
+         return response()-> view('home',compact('reminders'));
+        
+    }
 
 public function reminder(Request $request)
 {
@@ -81,4 +92,13 @@ public function showReminders(Request $request)
         $data->delete();
         return redirect()->back();
     }
+
+    public function logout(Request $request)
+    {
+        FacadesSession::flush();
+        Auth::logout();
+        return redirect('/');
+
+    }
+
 }

@@ -62,7 +62,7 @@ public function showReminders(Request $request)
 
     $reminders = $remindersQuery->get();
 
-    return view('welcome', ['reminders' => $reminders, 'status' => $status]);
+    return view('home', ['reminders' => $reminders, 'status' => $status]);
     }
 
 
